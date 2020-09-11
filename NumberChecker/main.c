@@ -9,9 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int printOutline(void);
-void oddEven(int userChoice);
-void primeComposite(int userChoice);
+//including the header file
+#include "header.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -35,16 +34,19 @@ int main(int argc, const char * argv[]) {
         //error checking if the user enters incorrect choice
         if (userChoice == 1)
         {
+            //Calls oddEven function
             oddEven(userChoice);
         }
         
         else if (userChoice == 2)
         {
+            //calls primeComposite function
             primeComposite(userChoice);
         }
         
         else if (userChoice == 3)
         {
+            //closes the program
             printf("\n");
             printf("*-------------------------------*\n");
             printf("* Thanks for using the program. *\n");
@@ -58,6 +60,7 @@ int main(int argc, const char * argv[]) {
         
         else
         {
+            //error checking for wrong input
             printf("!!!!You entered a wrong choice, please try again!!!!\n");
             printf("\n");
             printf("\n");
@@ -65,52 +68,4 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
-
-void oddEven(int userChoice)
-{
-    int oddEvenChecker;
-    printf("\n");
-    printf("Please enter a number: ");
-    scanf("%d", &oddEvenChecker);
-    
-    if (oddEvenChecker % 2 == 0)
-    {
-        printf("%d is even.\n", oddEvenChecker);
-        printf("\n");
-    }
-    
-    else
-    {
-        printf("%d is odd.\n", oddEvenChecker);
-        printf("\n");
-    }
-}
-
-void primeComposite(int userChoice)
-{
-    int value = 0;
-    int checkNum;
-    
-    printf("\n");
-    printf("Please enter a number:");
-    scanf("%d", &checkNum);
-    
-    for (int i = 1; i<=checkNum; i++) {
-        
-        if (checkNum % i == 0) {
-            value = value + 1;
-        }
-    }
-    
-    if (value == 2) {
-        printf("%d is a prime number.\n", checkNum);
-        printf("\n");
-    }
-    
-    else {
-        printf("%d is a composite number.\n", checkNum);
-        printf("\n");
-    }
-}
-
 
